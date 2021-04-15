@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { realTimeDb } from "../firebase";
+import { svg } from "./Svg";
 import Card from "./Card";
 
 const Main = () => {
@@ -38,9 +39,13 @@ const Main = () => {
     <>
       <main className="p-3">
         <section className="flex flex-col items-center space-y-6">
-          <h1 className="text-2xl capitalize font-bold text-blue-600">
-            live sensor data
-          </h1>
+          <div className="flex items-center space-x-2">
+            <div className="w-6 h-6 fill-current text-blue-600">{svg.temp}</div>
+            <h1 className="text-2xl capitalize font-bold text-blue-600">
+              live sensor data
+            </h1>
+          </div>
+
           <div className="flex space-x-4">
             <Card title={"temperature"} unit={sensorData && sensorData.TEMP} />
             <Card title={"humidity"} unit={sensorData && sensorData.HUMDITY} />
