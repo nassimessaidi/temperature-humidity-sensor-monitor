@@ -14,7 +14,6 @@ const Main = () => {
       .then((snapshot) => {
         if (snapshot.exists()) {
           const val = snapshot.val();
-          console.log(val);
           setSensorData(val);
         } else {
           console.log("No data available");
@@ -47,8 +46,8 @@ const Main = () => {
           </div>
 
           <div className="flex space-x-4">
-            <Card title={"temperature"} unit={sensorData && sensorData.TEMP} />
-            <Card title={"humidity"} unit={sensorData && sensorData.HUMDITY} />
+            <Card title={"temperature"} unit={sensorData && sensorData?.TEMP} />
+            <Card title={"humidity"} unit={sensorData && sensorData?.HUMDITY} />
           </div>
         </section>
       </main>
