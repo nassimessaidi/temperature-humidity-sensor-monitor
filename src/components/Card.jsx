@@ -19,7 +19,7 @@ const Card = ({ title, unit }) => {
           {isC ? unit : fahrenheit}{" "}
           {title === "temperature" ? (
             <sup
-              className="text-gray-500 font-medium"
+              className="text-gray-500 font-medium cursor-pointer"
               onClick={() => setIsC(!isC)}
             >
               °{isC ? "C" : "F"}
